@@ -1,0 +1,3 @@
+D:\Universidad\Programs\CMake\bin\cmake.exe -E rm -f CMakeFiles\acreed.dir/objects.a
+D:\Universidad\Programs\msys64\ucrt64\bin\ar.exe qc CMakeFiles\acreed.dir/objects.a @CMakeFiles\acreed.dir\objects1.rsp
+D:\Universidad\Programs\msys64\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\acreed.dir/objects.a -Wl,--no-whole-archive -o debug\acreed.exe -Wl,--out-implib,libacreed.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\acreed.dir\linkLibs.rsp

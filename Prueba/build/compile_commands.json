@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Universidad/2do Curso/Estructuras-Lineales/Prueba/build",
+  "command": "D:\\Universidad\\Programs\\msys64\\ucrt64\\bin\\g++.exe   -g -std=c++23 -Wall -Wextra -pedantic -Werror -o CMakeFiles\\prueba.dir\\main.cpp.obj -c \"D:\\Universidad\\2do Curso\\Estructuras-Lineales\\Prueba\\main.cpp\"",
+  "file": "D:/Universidad/2do Curso/Estructuras-Lineales/Prueba/main.cpp",
+  "output": "CMakeFiles/prueba.dir/main.cpp.obj"
+}
+]

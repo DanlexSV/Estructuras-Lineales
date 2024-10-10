@@ -1,0 +1,3 @@
+D:/Universidad/2do Curso/Estructuras-Lineales/Prueba/build/CMakeFiles/prueba.dir
+D:/Universidad/2do Curso/Estructuras-Lineales/Prueba/build/CMakeFiles/edit_cache.dir
+D:/Universidad/2do Curso/Estructuras-Lineales/Prueba/build/CMakeFiles/rebuild_cache.dir
