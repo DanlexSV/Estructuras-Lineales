@@ -64,7 +64,7 @@ int main() {
 			auto const mission_type = ranges::begin(type_chunk)->type;
 			auto const count = ranges::distance(type_chunk);
 
-			cout << format("  * {:<20} -> {}", mission_type, count) << endl;
+			cout << format("  * {:>20} -> {:>2}", mission_type, count) << endl;
 		}
 	}
 
