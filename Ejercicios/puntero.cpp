@@ -1,18 +1,21 @@
 #include <iostream>
-#include <iomanip>
-#include <fstream>
 #include <string>
-#include <vector>
+#include <iomanip>
 
 using namespace std;
 
+struct Student {
+	string name;
+	double grade_1 = 0, grade_2 = 0, grade_3 = 0;
+
+	auto average() -> double { return (grade_1 + grade_2 + grade_3) / 3; }
+};
+
 auto main() -> int
 {
-    auto n = int{0};
-    int* p1 = &n;
+	auto s = Student{"James Smith", 7.5, 8, 9.5};
 
-    auto d = double{9.9};
-    double* p2 = &d;
+	cout << fixed << setprecision(2) << s.average() << endl;
 
-    cout << "Puntero: " << p1 << " => " << sizeof(p1) << " bytes, puntero: " << p2 << " => " << sizeof(p2) << " bytes" << endl;
+	return EXIT_SUCCESS;
 }
