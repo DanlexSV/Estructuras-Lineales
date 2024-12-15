@@ -14,18 +14,15 @@ struct Student {
 
 auto main() -> int
 {
-	Student* s = new Student{"James Smith", 7.5, 8, 9.5};
+	Student* p = new Student[100]{};
 
-	// Puntero unico
-	auto p = make_unique<Student>();
-	
-	// Puntero compartido
-	auto ps = make_shared<Student>();
+	(*(p + 3)).grade_1 = 9.75;
+	(p + 3)->grade_2 = 8.88;
+	p[3].grade_3 = 10;
 
-	cout << fixed << setprecision(2) << s->grade_1 << endl;
-	cout << fixed << setprecision(2) << s->average() << endl;
+	cout << "La nota media es: " << fixed << setprecision(2) << p[3].average() << endl;
 
-	delete s;
+	delete[] p;
 
 	return EXIT_SUCCESS;
 }
