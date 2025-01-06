@@ -54,19 +54,19 @@ auto main() -> int
 	cout << "Band to search: ";
 	getline(cin, band_to_search);
 
-	auto const it = bands.find(band_to_search);
+	if (
+			auto const it = bands.find(band_to_search);
+			it != bands.end()
+	   ) {
+		auto& [_, members] = *it;
+		ranges::sort(members);
 
-	if (it == bands.end()) {
-		cout << "Sorry, " << band_to_search << " is not on the list" << endl;
-
-		return EXIT_FAILURE;
+		for (auto const& m : members) {
+			cout << "  *  " << m << endl;
+		}
 	}
-
-	auto& [_, members] = *it;
-
-	ranges::sort(members);
-	for (auto const& m : members) {
-		cout << "  *  " << m << endl;
+	else {
+		cout << "Sorry, " << band_to_search << " is not on the list" << endl;
 	}
 
 	return EXIT_SUCCESS;
