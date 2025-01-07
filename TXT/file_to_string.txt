@@ -1,0 +1,17 @@
+auto file_to_string(std::string filename) -> std::string
+{
+   using namespace std;
+   
+   auto in = ifstream{};
+   in.exceptions(ifstream::failbit | ifstream::badbit);
+   in.open(filename, ios::binary);
+
+   auto contents = string{};
+   in.seekg(0, ios::end);
+   if (auto const sz = streamoff{in.tellg()}; sz > 0) { // sz es entero con signo
+      contents.resize(sz); // bloque de memoria contigua desde C++11
+      in.seekg(0, ios::beg);
+      in.read(&contents[0], sz);
+   }
+   return contents;
+}
