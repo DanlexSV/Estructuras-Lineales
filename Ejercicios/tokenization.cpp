@@ -37,15 +37,26 @@ auto main() -> int
 	auto tokens = ranges::to<vector<string>>(boost::tokenizer{text});
 	ranges::sort(tokens);
 
-	auto freq_tokens_map = map<int, vector<string>>{};
+	auto freq_tokens_map = map<int, vector<string>, ranges::greater>{};
 
-	for (auto same_token = [](string const& t1, string const& t2) { return t1 == t2 }; 
+	for (
+			auto same_token = [](string const& t1, string const& t2) { return t1 == t2; }; 
 			auto token_chunk : tokens | views::chunk_by(same_token)
 		) {
-		auto const freq = ranges::distance(token_chunk.size());
-		auto const tkn = *ranges::begin(token_chunk)->size();
+		auto const freq = ranges::distance(token_chunk);
+		auto const tkn = *ranges::begin(token_chunk);
 
 		freq_tokens_map[freq].push_back(tkn);
+	}
+
+	for (auto [freq, tokens] : freq_tokens_map | views::take(5)) {
+		cout << freq << " --> ";
+
+		for (string tkn : tokens) {
+			cout << tkn;
+		}
+
+		cout << endl;
 	}
 
 	return EXIT_SUCCESS;
