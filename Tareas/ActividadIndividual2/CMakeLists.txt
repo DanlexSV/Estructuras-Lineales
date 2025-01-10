@@ -6,7 +6,7 @@ project(amazon
    LANGUAGES CXX
 )
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} amazonAnalysis.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE -lstdc++exp)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
